@@ -14,6 +14,10 @@ class _HomeTabState extends State<HomeTab> {
 
   @override
   Widget build(BuildContext context) {
+    List<MovieModel> movies = (DataDummy.dummyResultMovieJson['movies'] as List)
+        .map((e) => MovieModel.fromMap(e))
+        .toList();
+
     return ListView(
       padding: const EdgeInsets.all(24),
       children: [
@@ -56,7 +60,7 @@ class _HomeTabState extends State<HomeTab> {
                 Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: InkWell(
-                    onTap: (){},
+                    onTap: () {},
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(AssetPath.spiderman),
@@ -109,9 +113,11 @@ class _HomeTabState extends State<HomeTab> {
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,
           ),
-          itemCount: MovieModel.dummies.length,
+          // itemCount: MovieModel.dummies.length,
+          itemCount: movies.length,
           itemBuilder: (context, index) {
-            MovieModel movie = MovieModel.dummies[index];
+            // MovieModel movie = MovieModel.dummies[index];
+            MovieModel movie = movies[index];
             return CardMovieWidget(
               movie: movie,
               onTap: () {

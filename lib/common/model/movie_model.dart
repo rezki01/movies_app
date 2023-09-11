@@ -11,6 +11,14 @@ class MovieModel {
     this.about,
   });
 
+  factory MovieModel.fromMap(Map<String, dynamic> map) {
+    return MovieModel(
+      image: map['image'],
+      title: map['title'],
+      about: map['about'],
+    );
+  }
+
   static List<MovieModel> dummies = [
     MovieModel(
       image: AssetPath.drStrange,
