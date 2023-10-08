@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/common/common.dart';
+import 'package:movies_app/ui/screen/food/food_screen.dart';
 import 'package:movies_app/ui/screen/home/home_screen.dart';
 
 
@@ -16,9 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Movies App',
       theme: ThemeData(
-        scaffoldBackgroundColor: ColorConstant.background,
+        // scaffoldBackgroundColor: ColorConstant.background,
       ),
-      onGenerateRoute: RouteConfig.onGenerateRoute,
+      // onGenerateRoute: RouteConfig.onGenerateRoute,
+      home: const FoodScreen(),
     );
   }
 }
